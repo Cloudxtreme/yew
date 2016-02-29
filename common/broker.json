@@ -1,0 +1,10 @@
+{
+    "exchanges": {
+        "world.clientInput": {}
+    },
+    "queues": {
+        "world.clientInput.coordinator": {
+            "bind": "world.clientInput"
+        }
+    }
+}

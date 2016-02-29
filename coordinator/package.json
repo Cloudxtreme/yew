@@ -1,0 +1,16 @@
+{
+  "name": "coordinator",
+  "version": "0.1.0",
+  "description": "Main coordinator and entry point for the Yew MUD server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Holmes",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "amqp-as-promised": "^1.0.4",
+    "confidence": "^1.4.2"
+  }
+}
