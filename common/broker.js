@@ -48,8 +48,8 @@ module.exports = {
     configure: function()  {
         return new Promise((resolve, reject) => {
             createExchanges()
-                .then(() => createAndBindQueues())
-                .then(() => resolve())
+                .then(createAndBindQueues)
+                .then(resolve)
                 .catch(err => reject(err));
         });
     },
