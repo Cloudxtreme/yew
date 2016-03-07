@@ -1,0 +1,13 @@
+{
+  "name": "registration",
+  "version": "0.1.0",
+  "description": "Registration service for the Yew MUD server",
+  "main": "index.js",
+  "author": "Matt Holmes",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "seneca": "^1.3.0"
+  }
+}

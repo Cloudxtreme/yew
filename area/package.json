@@ -1,0 +1,12 @@
+{
+  "name": "area",
+  "version": "0.1.0",
+  "description": "Distributed area service for the Yew MUD server.",
+  "main": "index.js",
+  "author": "Matt Holmes",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "seneca": "^1.3.0"
+  }
+}

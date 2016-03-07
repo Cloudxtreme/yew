@@ -1,9 +1,12 @@
-coordinator:
-  build: ../coordinator/
-  container_name: coordinator
+world:
+  build: ../world/
+  container_name: world
   environment:
     - SERVICE_HOST=0.0.0.0
     - SERVICE_PORT=20000
+    - LISTENER_PORT=9999
+    - area_PORT=10001
+    - registration_PORT=10002
 #    - PROXY_HOST=set this to the docker-machine ip address or local machine address on linux
     # - frontend_PORT=10000
     # - service1_PORT=10001
@@ -12,15 +15,29 @@ coordinator:
     - 10000:20000
   links:
     rabbitmq
-network-listener:
-  build: ../network-listener/
-  container_name: network-listener
+
+area:
+  build: ../area/
+  container_name: area
   environment:
     - SERVICE_HOST=0.0.0.0
     - SERVICE_PORT=20001
-#    - PROXY_HOST=set this to the docker-machine ip address or local machine address on linux
-    # - frontend_PORT=10000
-    # - service1_PORT=10001
-    # - service2_PORT=10002
+    - world_PORT=10001
+    - registration_PORT=10002
   ports:
     - 10001:20001
+  links:
+    rabbitmq
+
+registration:
+  build: ../registration/
+  container_name: registration
+  environment:
+    - SERVICE_HOST=0.0.0.0
+    - SERVICE_PORT=20002
+    - world_PORT=10000
+    - area_PORT=10001
+  ports:
+    - 10002:20002
+  links:
+    rabbitmq

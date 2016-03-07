@@ -1,10 +1,15 @@
 {
     "exchanges": {
-        "world.clientInput": {}
+        "world.newConnection": {},
+        "world.output": {}
+
     },
     "queues": {
-        "world.clientInput.coordinator": {
-            "bind": "world.clientInput"
+        "registration.newConnection": {
+            "bind": "world.newConnection"
+        },
+        "world.output": {
+            "bind": "world.output"
         }
     }
 }

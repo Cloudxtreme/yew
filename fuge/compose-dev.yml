@@ -1,6 +1,9 @@
-coordinator:
-  build: ../coordinator/
-  container_name: coordinator
-networkListener:
-  build: ../network-listener
-  container_name: network-listener
+world:
+  build: ../world/
+  container_name: world
+area:
+  build: ../area/
+  container_name: area
+registration:
+  build: ../registration/
+  container_name: registration
