@@ -8,6 +8,8 @@ let serverContext = {
     connections: []
 };
 
+console.log(JSON.stringify(process.env));
+
 function createServer(seneca, exchange) {
     const port = process.env.LISTENER_PORT || 9999;
     telnet.createServer(client => {

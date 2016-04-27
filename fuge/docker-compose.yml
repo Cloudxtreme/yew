@@ -7,14 +7,11 @@ world:
     - LISTENER_PORT=9999
     - area_PORT=10001
     - registration_PORT=10002
-#    - PROXY_HOST=set this to the docker-machine ip address or local machine address on linux
-    # - frontend_PORT=10000
-    # - service1_PORT=10001
-    # - service2_PORT=10002
   ports:
     - 10000:20000
   links:
-    rabbitmq
+    - rabbitmq
+    - mongo
 
 area:
   build: ../area/
@@ -27,7 +24,8 @@ area:
   ports:
     - 10001:20001
   links:
-    rabbitmq
+    - rabbitmq
+    - mongo
 
 registration:
   build: ../registration/
@@ -40,4 +38,15 @@ registration:
   ports:
     - 10002:20002
   links:
-    rabbitmq
+    - rabbitmq
+    - mongo
+
+rabbitmq:
+  image: rabbitmq:3.6
+  ports:
+    - 5672:5672
+
+mongo:
+  image: mongo:3.2
+  ports:
+    - 27017:27017
