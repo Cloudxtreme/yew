@@ -11,6 +11,7 @@
   "dependencies": {
     "amqp": "^0.2.4",
     "amqp-as-promised": "^1.0.4",
+    "check-types": "^6.0.0",
     "confidence": "^1.4.2",
     "lodash": "^4.5.1",
     "winston": "^2.2.0"

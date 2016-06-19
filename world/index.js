@@ -23,11 +23,10 @@ seneca.client({
     pin: { role: 'registration' }
 });
 
-broker.configure()
-    .then(() => broker.connection().exchange('world.newConnection'))
-    .then(exchange => {
+broker.configure('world.newConnection')
+    .then(() => {
         service(seneca);
-        server(seneca, exchange);
+        server(seneca);
     })
     .catch(err => {
         console.error(err);

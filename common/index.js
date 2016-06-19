@@ -6,8 +6,5 @@ const broker = require('./broker');
 winston.level = process.env.NODE_ENV === 'production' ? 'error' : 'debug';
 
 module.exports = {
-    broker: {
-        configure: broker.configure,
-        connection: broker.connection
-    }
+    broker: broker
 };
