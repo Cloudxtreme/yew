@@ -1,9 +1,34 @@
 world:
   build: ../world/
   container_name: world
+  links:
+    - rabbitmq
+    - mongo
+
 area:
   build: ../area/
   container_name: area
+  links:
+    - rabbitmq
+    - mongo
+
 registration:
   build: ../registration/
   container_name: registration
+  links:
+    - rabbitmq
+    - mongo
+
+rabbitmq:
+  image: rabbitmq:3.6
+  environment:
+    - RABBITMQ_DEFAULT_USER=yew
+    - RABBITMQ_DEFAULT_PASS=yew
+    - RABBITMQ_DEFAULT_VHOST=yew
+  ports:
+    - 5672:5672
+
+mongo:
+  image: mongo:3.2
+  ports:
+    - 27017:27017

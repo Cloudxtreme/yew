@@ -4,7 +4,7 @@ const confidence = require('confidence');
 
 let store = new confidence.Store({
     amqp: {
-        url: 'amqp://yew:yew@localhost:5672/yew'
+        url: `amqp://yew:yew@${process.env.SERVICE_HOST}:${process.env.rabbitmq_PORT}/yew`
     }
 });
 

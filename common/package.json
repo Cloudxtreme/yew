@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "yew-common",
   "version": "0.1.0",
@@ -17,3 +18,23 @@
     "winston": "^2.2.0"
   }
 }
+=======
+{
+  "name": "yew-common",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Holmes",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "amqp-as-promised": "^1.0.4",
+    "confidence": "^1.4.2",
+    "lodash": "^4.5.1",
+    "winston": "^2.2.0"
+  }
+}
+>>>>>>> 1098a58fb4a0816a6fbba98a0821ac806f03b8c9

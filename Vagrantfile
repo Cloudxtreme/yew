@@ -18,8 +18,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", path: "scripts/vagrant/provision.sh"
   config.vm.provision "docker" do |d|
-    d.run "mongo", args: "-p 27017:27017"
-    d.run "rabbitmq", image: "rabbitmq:management",
-      args: "-p 5672:5672 -p 15672:15672"
+    #d.run "mongo", args: "-p 27017:27017"
+    #d.run "rabbitmq", image: "rabbitmq:management",
+    #  args: "-p 5672:5672 -p 15672:15672"
   end
 end
